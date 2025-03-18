@@ -1,0 +1,8 @@
+/Users/test/eclipse-workspace/customer3/src/main/java/component/behaviour/CustomerService.java
+/Users/test/eclipse-workspace/customer3/src/main/java/component/structure/Cart.java
+/Users/test/eclipse-workspace/customer3/src/main/java/component/structure/CartItem.java
+/Users/test/eclipse-workspace/customer3/src/main/java/component/structure/Customer.java
+/Users/test/eclipse-workspace/customer3/src/main/java/connector/CartItemRepository.java
+/Users/test/eclipse-workspace/customer3/src/main/java/connector/CartRepository.java
+/Users/test/eclipse-workspace/customer3/src/main/java/connector/CustomerRepository.java
+/Users/test/eclipse-workspace/customer3/src/main/java/connector/CustomerSpringDataConnectorRequester.java

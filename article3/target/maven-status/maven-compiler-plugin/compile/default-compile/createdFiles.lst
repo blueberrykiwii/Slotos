@@ -1,0 +1,9 @@
+com/example/article/connector/BookRepository.class
+com/example/article/component/structure/CD.class
+com/example/article/component/structure/Article.class
+com/example/article/component/behaviour/ArticleService.class
+com/example/article/connector/ArticleSpringDataConnectorRequester.class
+com/example/article/connector/CDRepository.class
+com/example/article/configuration/ArticleConfiguration.class
+com/example/article/component/structure/Book.class
+com/example/article/component/structure/BookCategory.class
