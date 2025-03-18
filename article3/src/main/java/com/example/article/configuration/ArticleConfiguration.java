@@ -7,9 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan("com.example.article") // Damit Spring den gesamten Microservice scannen kann
+@ComponentScan(basePackages = {"com.example.article", "com.example.article.component.behaviour", "com.example.article.connector"})
 public class ArticleConfiguration {
-
     public static void main(String[] args) {
         SpringApplication.run(ArticleConfiguration.class, args);
     }
