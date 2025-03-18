@@ -1,0 +1,4 @@
+component/behaviour/OrderService.class
+component/structure/OrderPosition.class
+connector/OrderRepository.class
+component/structure/Order.class
