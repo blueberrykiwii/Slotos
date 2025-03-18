@@ -28,6 +28,7 @@ public class ArticleService {
     public Optional<Article> getArticleById(Integer id) {
         return articleRepository.findById(id);
     }
+    
 
     // Alle Artikel abrufen
     public List<Article> getAllArticles() {
