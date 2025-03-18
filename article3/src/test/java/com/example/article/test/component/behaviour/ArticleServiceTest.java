@@ -1,4 +1,4 @@
-package com.example.article.test.component.behaviour;
+package src.test.java.com.example.article.test.component.behaviour;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
