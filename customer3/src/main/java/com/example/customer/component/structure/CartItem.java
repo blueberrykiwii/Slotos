@@ -1,8 +1,7 @@
 package com.example.customer.component.structure;
 
-import javax.persistence.*;
-
-import com.example.article.component.structure.Article;
+import com.example.customer.dto.ArticleDTO;
+import jakarta.persistence.*;
 
 @Entity
 public class CartItem {
@@ -11,41 +10,36 @@ public class CartItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer cartItemId;
 
-    @ManyToOne
-    @JoinColumn(name = "cart_id")
-    private Cart cart; // Beziehung zu Cart
-
-    @ManyToOne
-    @JoinColumn(name = "article_id")
-    private Article article; // Beziehung zu Article
+    @Transient // Da ArticleDTO kein @Entity ist, wird es nicht in der DB gespeichert
+    private ArticleDTO article;
 
     private int quantity;
 
-    // Standardkonstruktor
-    public CartItem() {
-    }
+    @ManyToOne
+    @JoinColumn(name = "cart_id")
+    private Cart cart;
 
-    // Konstruktor mit Artikel und Menge
-    public CartItem(Article article) {
+    public CartItem() {}
+
+    public CartItem(ArticleDTO article, int quantity) {
         this.article = article;
-        this.quantity = 1;
+        this.quantity = quantity;
     }
 
-    // Getter und Setter
+    public ArticleDTO getArticle() {
+        return article;
+    }
+
+    public void setArticle(ArticleDTO article) {
+        this.article = article;
+    }
+    
     public Integer getCartItemId() {
         return cartItemId;
     }
 
     public void setCartItemId(Integer cartItemId) {
         this.cartItemId = cartItemId;
-    }
-
-    public Article getArticle() {
-        return article;
-    }
-
-    public void setArticle(Article article) {
-        this.article = article;
     }
 
     public int getQuantity() {
@@ -62,5 +56,13 @@ public class CartItem {
 
     public void decrementQuantity() {
         this.quantity--;
+    }
+
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
     }
 }
