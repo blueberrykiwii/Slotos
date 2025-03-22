@@ -1,4 +1,11 @@
-/Users/test/eclipse-workspace/order3/src/main/java/component/behaviour/OrderService.java
-/Users/test/eclipse-workspace/order3/src/main/java/component/structure/Order.java
-/Users/test/eclipse-workspace/order3/src/main/java/component/structure/OrderPosition.java
-/Users/test/eclipse-workspace/order3/src/main/java/connector/OrderRepository.java
+/Users/test/eclipse-workspace/order3/src/main/java/com/example/order/component/structure/OrderPosition.java
+/Users/test/eclipse-workspace/order3/src/main/java/com/example/order/dto/ArticleDTO.java
+/Users/test/eclipse-workspace/order3/src/main/java/com/example/order/connector/OrderRepository.java
+/Users/test/eclipse-workspace/order3/src/main/java/com/example/order/connector/OrderSpringDataMongoDBConnectorRequester.java
+/Users/test/eclipse-workspace/order3/src/main/java/com/example/order/connector/ForeignShopJMSConnectorReceiver.java
+/Users/test/eclipse-workspace/order3/src/main/java/com/example/order/configuration/OrderConfiguration.java
+/Users/test/eclipse-workspace/order3/src/main/java/com/example/order/component/behaviour/OrderService.java
+/Users/test/eclipse-workspace/order3/src/main/java/com/example/order/connector/ForeignCustomerRestConnectorRequester.java
+/Users/test/eclipse-workspace/order3/src/main/java/com/example/order/connector/ForeignOrderRestConnectorRequester.java
+/Users/test/eclipse-workspace/order3/src/main/java/com/example/order/connector/ForeignArticleRestConnectorRequester.java
+/Users/test/eclipse-workspace/order3/src/main/java/com/example/order/component/structure/Order.java
