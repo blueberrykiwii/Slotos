@@ -1,51 +1,34 @@
 package com.example.customer.component.structure;
 
-import javax.persistence.*;
+import com.example.customer.dto.ArticleDTO;
 
-import com.example.article.component.structure.Article;
-
-@Entity
 public class CartItem {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private ArticleDTO article;
+    private int quantity;
     private Integer cartItemId;
 
-    @ManyToOne
-    @JoinColumn(name = "cart_id")
-    private Cart cart; // Beziehung zu Cart
+    public CartItem() {}
 
-    @ManyToOne
-    @JoinColumn(name = "article_id")
-    private Article article; // Beziehung zu Article
-
-    private int quantity;
-
-    // Standardkonstruktor
-    public CartItem() {
-    }
-
-    // Konstruktor mit Artikel und Menge
-    public CartItem(Article article) {
+    public CartItem(ArticleDTO article, int quantity) {
         this.article = article;
-        this.quantity = 1;
+        this.quantity = quantity;
     }
 
-    // Getter und Setter
-    public Integer getCartItemId() {
-        return cartItemId;
-    }
-
-    public void setCartItemId(Integer cartItemId) {
-        this.cartItemId = cartItemId;
-    }
-
-    public Article getArticle() {
+    public ArticleDTO getArticle() {
         return article;
     }
 
-    public void setArticle(Article article) {
+    public void setArticle(ArticleDTO article) {
         this.article = article;
+    }
+    
+    public Integer getCartItemId() {
+        return cartItemId;
+    }
+   
+
+    public void setCartItemId(Integer cartItemId) {
+        this.cartItemId = cartItemId;
     }
 
     public int getQuantity() {
