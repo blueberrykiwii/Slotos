@@ -1,14 +1,14 @@
 package com.example.order.component.behaviour;
 
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.amqp.rabbit.annotation.RabbitListener;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
-
 import com.example.order.component.structure.Order;
 import com.example.order.component.structure.OrderPosition;
+import com.example.order.connector.ForeignArticleRestConnectorRequester;
+import com.example.order.connector.ForeignCustomerRestConnectorRequester;
 import com.example.order.connector.OrderRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -18,17 +18,22 @@ public class OrderService {
 
     private final OrderRepository orderRepository;
     private final RabbitTemplate rabbitTemplate;
-    private final RestTemplate restTemplate;
 
-    private static final String ARTICLE_SERVICE_URL = "http://ARTICLE-SERVICE/articles/";
+    private final ForeignArticleRestConnectorRequester articleClient; // FeignClient für Article
+    private final ForeignCustomerRestConnectorRequester customerClient; // FeignClient für Customer
+   
 
     @Autowired
-    public OrderService(OrderRepository orderRepository, RabbitTemplate rabbitTemplate, RestTemplate restTemplate) {
+    public OrderService(OrderRepository orderRepository, RabbitTemplate rabbitTemplate,
+                        ForeignArticleRestConnectorRequester articleClient,
+                        ForeignCustomerRestConnectorRequester customerClient) {
         this.orderRepository = orderRepository;
         this.rabbitTemplate = rabbitTemplate;
-        this.restTemplate = restTemplate;
+        this.articleClient = articleClient;
+        this.customerClient = customerClient;
     }
- // Bestellung per Messaging empfangen
+
+    // Bestellung per Messaging empfangen
     @RabbitListener(queues = "${queue.order}")
     public void receiveOrder(Order order) {
         System.out.println("Neue Bestellung empfangen: " + order);
@@ -36,11 +41,10 @@ public class OrderService {
         processIncomingOrder(order);
     }
 
-
-    // Bestellauftrag empfangen (Messaging)
+    // Bestellauftrag verarbeiten (z.B. Artikelpreise abrufen, Gesamtpreis berechnen)
     public void processIncomingOrder(Order order) {
-        // Artikelpreise von ArticleService abrufen und Gesamtpreis berechnen
         double totalPrice = 0.0;
+        // Durch alle Bestellpositionen iterieren und Artikelpreise berechnen
         for (OrderPosition position : order.getOrderPositions()) {
             Double articlePrice = getArticlePrice(position.getArticleId());
             if (articlePrice != null) {
@@ -48,7 +52,21 @@ public class OrderService {
             }
         }
         System.out.println("Bestellung verarbeitet, Gesamtpreis: " + totalPrice);
-        orderRepository.save(order);
+
+        // Bestellung speichern (MongoDB)
+        order.setTotalPrice((float) totalPrice); // Gesamtpreis auf die Bestellung setzen
+        orderRepository.save(order);  // Bestellung in der DB speichern
+    }
+
+    // Artikelpreis vom Article-Service über FeignClient abrufen
+    private Double getArticlePrice(String articleId) {
+        try {
+            // Anfrage an Article-Service senden
+            return (double) articleClient.getArticle(articleId).getPrice(); // Hier wird der Preis des Artikels abgerufen
+        } catch (Exception e) {
+            System.err.println("Fehler beim Abrufen des Artikelpreises: " + e.getMessage());
+            return null;
+        }
     }
 
     // Methode zum Speichern einer Bestellung
@@ -56,7 +74,7 @@ public class OrderService {
         return orderRepository.save(order);
     }
 
-    // Methode zum Abrufen einer Bestellung nach ID (MongoDB nutzt String-IDs)
+    // Methode zum Abrufen einer Bestellung nach ID
     public Optional<Order> getOrderById(String id) {
         return orderRepository.findById(id);
     }
@@ -69,15 +87,7 @@ public class OrderService {
     // Methode zum Löschen einer Bestellung
     public void deleteOrder(String id) {
         orderRepository.deleteById(id);
-    }
-
-    // Methode zum Abrufen des Artikelpreises vom ArticleService
-    private Double getArticlePrice(String articleId) {
-        try {
-            return restTemplate.getForObject(ARTICLE_SERVICE_URL + articleId + "/price", Double.class);
-        } catch (Exception e) {
-            System.err.println("Fehler beim Abrufen des Artikelpreises: " + e.getMessage());
-            return null;
-        }
+    
     }
 }
+

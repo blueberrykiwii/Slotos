@@ -1,11 +1,8 @@
 package com.example.customer.component.structure;
 
-import javax.persistence.*;
-
-import com.example.order.component.structure.Order;
-
-import java.util.HashMap;
-import java.util.Map;
+import jakarta.persistence.*;
+import java.util.List;
+import java.util.ArrayList;
 
 @Entity
 public class Customer {
@@ -18,10 +15,10 @@ public class Customer {
     private String address;
 
     @OneToOne(cascade = CascadeType.ALL)
-    private Cart cart; // Angenommen, Cart ist eine weitere Entity, die du noch erstellen musst
+    private Cart cart; // Annahme: Cart ist eine eigene Entity in MariaDB
 
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-    private Map<Integer, Order> orders = new HashMap<>();
+    @ElementCollection
+    private List<String> orderIds = new ArrayList<>(); // Speichert nur Order-IDs als String
 
     public Customer() {}
 
@@ -40,6 +37,22 @@ public class Customer {
         this.customerId = customerId;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public Cart getCart() {
         return cart;
     }
@@ -48,15 +61,15 @@ public class Customer {
         this.cart = cart;
     }
 
-    public Map<Integer, Order> getOrders() {
-        return orders;
+    public List<String> getOrderIds() {
+        return orderIds;
     }
 
-    public void setOrders(Map<Integer, Order> orders) {
-        this.orders = orders;
+    public void setOrderIds(List<String> orderIds) {
+        this.orderIds = orderIds;
     }
 
-    public void addOrder(Order order) {
-        orders.put(order.getOrderId(), order);
+    public void addOrderId(String orderId) {
+        this.orderIds.add(orderId);
     }
 }
