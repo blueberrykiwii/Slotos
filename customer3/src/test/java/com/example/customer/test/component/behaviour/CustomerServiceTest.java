@@ -3,7 +3,9 @@ package com.example.customer.test.component.behaviour;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+import com.example.customer.CustomerConfiguration;
+
+@SpringBootTest (classes = CustomerConfiguration.class)
 public class CustomerServiceTest {
 
     @Test
