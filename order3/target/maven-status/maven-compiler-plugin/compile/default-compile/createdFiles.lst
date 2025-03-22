@@ -1,4 +1,11 @@
-component/behaviour/OrderService.class
-component/structure/OrderPosition.class
-connector/OrderRepository.class
-component/structure/Order.class
+com/example/order/connector/OrderRepository.class
+com/example/order/configuration/OrderConfiguration.class
+com/example/order/dto/ArticleDTO.class
+com/example/order/connector/OrderSpringDataMongoDBConnectorRequester.class
+com/example/order/component/structure/OrderPosition.class
+com/example/order/component/behaviour/OrderService.class
+com/example/order/connector/ForeignArticleRestConnectorRequester.class
+com/example/order/connector/ForeignShopJMSConnectorReceiver.class
+com/example/order/connector/ForeignCustomerRestConnectorRequester.class
+com/example/order/component/structure/Order.class
+com/example/order/connector/ForeignOrderRestConnectorRequester.class
