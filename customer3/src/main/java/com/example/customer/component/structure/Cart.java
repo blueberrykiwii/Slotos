@@ -1,7 +1,6 @@
 package com.example.customer.component.structure;
 
-import javax.persistence.*;
-import java.util.Collection;
+import jakarta.persistence.*;
 import java.util.HashMap;
 import java.util.Map;
 

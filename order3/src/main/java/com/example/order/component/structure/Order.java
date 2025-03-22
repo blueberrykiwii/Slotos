@@ -12,6 +12,7 @@ public class Order {
     private String orderId;
     private String customerId;  // Speichert nur die ID des Kunden
     private List<OrderPosition> orderPositions = new ArrayList<>();
+    private float totalPrice;  // Gesamtpreis der Bestellung
 
     public Order() {
     }
@@ -39,6 +40,14 @@ public class Order {
 
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
+    }
+
+    public float getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(float totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
     public List<OrderPosition> getOrderPositions() {
