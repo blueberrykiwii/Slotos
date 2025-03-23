@@ -1,0 +1,12 @@
+# Shop-Service Dockerfile
+FROM openjdk:17-jdk-slim
+
+WORKDIR /app
+
+# Passe den JAR-Namen an
+COPY target/shop-service-0.0.1-SNAPSHOT.jar app.jar
+
+# Exponierter Port (z.B. 8084)
+EXPOSE 8084
+
+ENTRYPOINT ["java", "-jar", "app.jar"]
