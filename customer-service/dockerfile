@@ -1,0 +1,14 @@
+# Customer-Service Dockerfile
+FROM openjdk:17-jdk-slim
+
+# Arbeitsverzeichnis im Container setzen
+WORKDIR /app
+
+# Kopiere das erzeugte JAR in den Container (Passe den JAR-Namen an!)
+COPY target/customer-service-0.0.1-SNAPSHOT.jar app.jar
+
+# Exponiere den Port, auf dem der Customer-Service läuft (z.B. 8083)
+EXPOSE 8083
+
+# Starte die Anwendung
+ENTRYPOINT ["java", "-jar", "app.jar"]
