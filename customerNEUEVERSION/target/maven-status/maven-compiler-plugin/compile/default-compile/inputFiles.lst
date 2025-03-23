@@ -1,0 +1,15 @@
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/customerNEUEVERSION/src/main/java/com/example/customer/connector/ForeignOrderRestConnectorRequester.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/customerNEUEVERSION/src/main/java/com/example/customer/connector/CustomerRepository.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/customerNEUEVERSION/src/main/java/com/example/customer/connector/CartItemRepository.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/customerNEUEVERSION/src/main/java/com/example/customer/connector/ForeignCustomerRestConnectorProvider.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/customerNEUEVERSION/src/main/java/com/example/customer/connector/CartRepository.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/customerNEUEVERSION/src/main/java/com/example/customer/connector/CustomerSpringDataConnectorRequester.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/customerNEUEVERSION/src/main/java/com/example/customer/CustomerConfiguration.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/customerNEUEVERSION/src/main/java/com/example/customer/component/behaviour/CustomerService.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/customerNEUEVERSION/src/main/java/com/example/customer/dto/OrderDTO.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/customerNEUEVERSION/src/main/java/com/example/customer/component/structure/Customer.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/customerNEUEVERSION/src/main/java/com/example/customer/dto/ArticleDTO.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/customerNEUEVERSION/src/main/java/com/example/customer/component/structure/CartItem.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/customerNEUEVERSION/src/main/java/com/example/customer/dto/OrderPositionDTO.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/customerNEUEVERSION/src/main/java/com/example/customer/connector/CustomerSpringDataJPAConnector.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/customerNEUEVERSION/src/main/java/com/example/customer/component/structure/Cart.java
