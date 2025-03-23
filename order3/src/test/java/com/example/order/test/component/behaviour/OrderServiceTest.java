@@ -2,8 +2,11 @@ package com.example.order.test.component.behaviour;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import com.example.order.OrderApplication;
 
-@SpringBootTest
+
+@SpringBootTest(classes = OrderApplication.class)  //ich weis nicht ob das richtig ist hier ein Spring Boot Test zu machen
+
 public class OrderServiceTest {
 
     @Test
