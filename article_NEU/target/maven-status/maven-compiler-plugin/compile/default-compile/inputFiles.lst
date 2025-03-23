@@ -1,0 +1,13 @@
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/article_NEU/src/main/java/com/example/article/ArticleConfiguration.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/article_NEU/src/main/java/com/example/article/component/behaviour/ArticleService.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/article_NEU/src/main/java/com/example/article/component/structure/Article.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/article_NEU/src/main/java/com/example/article/component/structure/Book.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/article_NEU/src/main/java/com/example/article/component/structure/BookCategory.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/article_NEU/src/main/java/com/example/article/component/structure/CD.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/article_NEU/src/main/java/com/example/article/component/structure/Catalog.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/article_NEU/src/main/java/com/example/article/connector/ArticleSpringDataConnectorRequester.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/article_NEU/src/main/java/com/example/article/connector/BookRepository.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/article_NEU/src/main/java/com/example/article/connector/CDRepository.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/article_NEU/src/main/java/com/example/article/connector/CatalogRepository.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/article_NEU/src/main/java/com/example/article/connector/ForeignArticleRestConnectorProvider.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/article_NEU/src/main/java/com/example/article/connector/ForeignOrderRestConnectorRequester.java
