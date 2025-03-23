@@ -1,0 +1,12 @@
+# Order-Service Dockerfile
+FROM openjdk:17-jdk-slim
+
+WORKDIR /app
+
+# Passe den JAR-Namen an
+COPY target/order-service-0.0.1-SNAPSHOT.jar app.jar
+
+# Exponierter Port (z.B. 8082)
+EXPOSE 8082
+
+ENTRYPOINT ["java", "-jar", "app.jar"]

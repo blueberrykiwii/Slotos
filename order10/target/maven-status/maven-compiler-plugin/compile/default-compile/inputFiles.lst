@@ -1,0 +1,13 @@
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/order10/src/main/java/com/example/order/connector/OrderSpringDataMongoDBConnectorRequester.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/order10/src/main/java/com/example/order/connector/ForeignOrderRestConnectorRequester.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/order10/src/main/java/com/example/order/OrderApplication.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/order10/src/main/java/com/example/order/connector/ForeignCustomerRestConnectorRequester.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/order10/src/main/java/com/example/order/connector/ForeignArticleRestConnectorRequester.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/order10/src/main/java/com/example/order/component/structure/Order.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/order10/src/main/java/com/example/order/connector/ForeignShopJMSConnectorReceiver.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/order10/src/main/java/com/example/order/configuration/RabbitMQConfiguration.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/order10/src/main/java/com/example/order/connector/OrderController.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/order10/src/main/java/com/example/order/connector/OrderRepository.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/order10/src/main/java/com/example/order/dto/ArticleDTO.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/order10/src/main/java/com/example/order/component/structure/OrderPosition.java
+/Users/lassegrot/Desktop/PrüfungSlotosNeu/order10/src/main/java/com/example/order/component/behaviour/OrderService.java
