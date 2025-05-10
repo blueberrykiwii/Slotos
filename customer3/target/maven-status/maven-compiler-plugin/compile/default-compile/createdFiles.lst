@@ -1,0 +1,15 @@
+com/example/customer/connector/ForeignOrderRestConnectorRequester.class
+com/example/customer/connector/CartRepository.class
+com/example/customer/component/behaviour/CustomerService.class
+com/example/customer/component/structure/CartItem.class
+com/example/customer/component/structure/Cart.class
+com/example/customer/connector/CustomerSpringDataJPAConnector.class
+com/example/customer/connector/CustomerSpringDataConnectorRequester.class
+com/example/customer/dto/ArticleDTO.class
+com/example/customer/component/structure/Customer.class
+com/example/customer/dto/OrderPositionDTO.class
+com/example/customer/dto/OrderDTO.class
+com/example/customer/configuration/CustomerConfiguration.class
+com/example/customer/connector/ForeignCustomerRestConnectorProvider.class
+com/example/customer/connector/CartItemRepository.class
+com/example/customer/connector/CustomerRepository.class
